@@ -1,144 +1,148 @@
 @font-face {
-  font-family: 'Homa';
-  src: url('fonts/Far_Homa.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Homa';
+  src: url('fonts/Far_Homa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* حذف @font-face مربوط به Orbitron اگر هست */
-
-/* فونت فارسی هما و استایل کلی */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
 }
 
 body {
-  background-color: #004AAD;
-  font-family: 'Homa', sans-serif;
-  color: white;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #004AAD;
+  font-family: 'Homa', sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .container {
-  text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
-  width: 90%;
-  max-width: 420px;
+  width: 90%;
+  max-width: 420px;
+  animation: fadeIn 1.5s ease-in-out;
+  margin: 0 auto;
 }
 
 .top-text {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: #ffffff;
-  text-shadow: 0 0 8px #00f0ff;
-  margin-bottom: 20px;
-  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  text-shadow: 0 0 8px #00f0ff;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .glass-box {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding: 30px 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  animation: floatUp 1.2s ease forwards;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: floatUp 1.2s ease forwards;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .line {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: white;
-  letter-spacing: 1px;
-  font-family: 'Homa', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Homa', sans-serif;
 }
 
 .neon-button {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 20px;
-  color: #004AAD;
-  background: white;
-  font-weight: bold;
-  font-family: 'Homa', sans-serif;
-  letter-spacing: 0.5px;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 0 10px white, 0 0 20px #fff;
-  animation: pulse 2s infinite;
-  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 30px;
+  color: #004AAD;
+  background: white;
+  font-weight: bold;
+  font-family: 'Homa', sans-serif;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 10px white, 0 0 20px #fff;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
+  vertical-align: middle;
 }
 
 .neon-button:hover {
-  box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
-  transform: scale(1.05);
+  box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
+  transform: scale(1.05);
 }
 
 .arrow {
-  animation: blink 1s infinite;
-  color: #00e1ff;
-  font-size: 18px;
-  transform: rotate(0deg);
+  animation: blink 1s infinite;
+  color: #00e1ff;
+  font-size: 18px;
+  transform: rotate(0deg);
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 @media (min-width: 768px) {
-  .neon-button {
-    flex-direction: row;
-    padding: 16px 32px;
-    font-size: 18px;
-    border-radius: 40px;
-  }
+  .neon-button {
+    padding: 16px 40px;
+    font-size: 18px;
+    border-radius: 40px;
+  }
 
-  .arrow {
-    font-size: 22px;
-    margin-left: 10px;
-    margin-right: 0;
-    animation: blink 1s infinite;
-  }
+  .arrow {
+    font-size: 22px;
+    margin-left: 10px;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 767px) {
-  .neon-button {
-    flex-direction: row;
-  }
+  .neon-button {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
 
-  .arrow {
-    font-size: 18px;
-    margin-left: 10px;
-    margin-right: 0;
-    animation: blink 1s infinite;
-  }
+  .arrow {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 0;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
-  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
-  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
+  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
