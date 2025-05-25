@@ -38,11 +38,13 @@ body {
 
 .top-text {
   font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
   font-size: 22px;
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
-  text-align: center;  /* وسط‌چین */
+  direction: ltr;
+  text-align: center;  /* وسط چین انگلیسی */
 }
 
 .glass-box {
@@ -63,6 +65,8 @@ body {
   color: white;
   letter-spacing: 1px;
   font-family: 'Homa', sans-serif;
+  direction: rtl;
+  text-align: center;  /* متن فارسی وسط چین */
 }
 
 .neon-button {
@@ -82,7 +86,6 @@ body {
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
-  flex-direction: row;
 }
 
 .neon-button:hover {
@@ -94,12 +97,14 @@ body {
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  transform: rotate(0deg); /* سمت راست */
-  margin-left: 10px;  /* فاصله سمت چپ */
+  transform: rotate(0deg); /* مستقیم به سمت راست */
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 @media (min-width: 768px) {
   .neon-button {
+    flex-direction: row;
     padding: 16px 32px;
     font-size: 18px;
     border-radius: 40px;
@@ -107,16 +112,20 @@ body {
 
   .arrow {
     font-size: 22px;
+    margin-left: 10px;
+    margin-right: 0;
   }
 }
 
 @media (max-width: 767px) {
   .neon-button {
-    padding: 12px 20px;
+    flex-direction: row;
   }
 
   .arrow {
     font-size: 18px;
+    margin-left: 10px;
+    margin-right: 0;
   }
 }
 
