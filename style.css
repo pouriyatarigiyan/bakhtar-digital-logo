@@ -5,7 +5,12 @@
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+@font-face {
+  font-family: 'Orbitron';
+  src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
 * {
   margin: 0;
@@ -37,6 +42,7 @@ body {
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
+  text-align: center;  /* وسط‌چین */
 }
 
 .glass-box {
@@ -76,7 +82,7 @@ body {
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
-  flex-direction: row; /* برای فلش سمت راست */
+  flex-direction: row;
 }
 
 .neon-button:hover {
@@ -88,9 +94,8 @@ body {
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  transform: rotate(0deg);
-  margin-left: 10px;
-  margin-right: 0;
+  transform: rotate(0deg); /* سمت راست */
+  margin-left: 10px;  /* فاصله سمت چپ */
 }
 
 @media (min-width: 768px) {
@@ -107,7 +112,7 @@ body {
 
 @media (max-width: 767px) {
   .neon-button {
-    /* flex-direction: row; همین باشه */
+    padding: 12px 20px;
   }
 
   .arrow {
@@ -116,45 +121,22 @@ body {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 10px white, 0 0 20px #fff;
-  }
-  50% {
-    box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
-  }
-  100% {
-    box-shadow: 0 0 10px white, 0 0 20px #fff;
-  }
+  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
+  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
 }
 
 @keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
