@@ -1,7 +1,77 @@
+@font-face {
+  font-family: 'Homa';
+  src: url('fonts/Far_Homa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+body {
+  background-color: #004AAD;
+  font-family: 'Homa', sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+  width: 90%;
+  max-width: 420px;
+}
+
+.top-text {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  text-shadow: 0 0 8px #00f0ff;
+  margin-bottom: 20px;
+  direction: ltr;
+  text-align: center;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: floatUp 1.2s ease forwards;
+  margin: 0 auto;
+}
+
+.line {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Homa', sans-serif;
+  direction: rtl;
+  text-align: center;
+}
+
 .neon-button {
   margin-top: 20px;
   display: flex;
-  flex-direction: row;       /* چیدمان افقی، فلش سمت راست */
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -27,14 +97,14 @@
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  transform: rotate(0deg);  /* فلش به سمت راست */
-  margin-left: 10px;        /* فاصله بین متن و فلش */
+  transform: rotate(0deg); /* راست */
+  margin-left: 10px;
   margin-right: 0;
-  order: 2;                 /* قرارگیری فلش بعد متن */
 }
 
 @media (min-width: 768px) {
   .neon-button {
+    flex-direction: row;
     padding: 16px 32px;
     font-size: 18px;
     border-radius: 40px;
@@ -49,7 +119,6 @@
 
 @media (max-width: 767px) {
   .neon-button {
-    /* همان flex-direction: row; حفظ شود */
     flex-direction: row;
   }
 
@@ -58,4 +127,25 @@
     margin-left: 10px;
     margin-right: 0;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
+  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
