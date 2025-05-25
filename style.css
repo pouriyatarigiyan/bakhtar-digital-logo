@@ -1,6 +1,8 @@
+/* فونت آبان */
+@import url('https://cdn.fontcdn.ir/Font/Persian/Aban/Aban.css');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/homa');
 
+/* تنظیمات پایه */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +12,7 @@
 
 body {
   background-color: #004AAD;
-  font-family: 'Homa', sans-serif;
+  font-family: 'Aban', sans-serif !important;
   color: white;
   height: 100vh;
   display: flex;
@@ -26,9 +28,9 @@ body {
   max-width: 420px;
 }
 
-/* متن انگلیسی بالا */
+/* متن بالای صفحه با فونت Orbitron (انگلیسی) */
 .top-text {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif !important;
   font-size: 22px;
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
@@ -47,14 +49,14 @@ body {
   margin: 0 auto;
 }
 
-/* متن فارسی */
+/* خطوط متن فارسی */
 .line {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 12px;
   color: white;
   letter-spacing: 1px;
-  font-family: 'Homa', sans-serif;
+  font-family: 'Aban', sans-serif !important;
 }
 
 /* دکمه نئون */
@@ -68,14 +70,14 @@ body {
   color: #004AAD;
   background: white;
   font-weight: bold;
-  font-family: 'Homa', sans-serif;
+  font-family: 'Aban', sans-serif !important;
   letter-spacing: 0.5px;
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
-  flex-direction: row-reverse;
+  cursor: pointer;
 }
 
 /* هاور دکمه */
@@ -86,41 +88,42 @@ body {
 
 /* فلش */
 .arrow {
-  animation: blink 1s infinite;
+  animation: blink 1.5s infinite;
   color: #00e1ff;
-  font-size: 20px;
-  transform: rotate(0deg); /* مستقیم به راست */
-  order: 2;
-  margin-left: 10px;
+  font-size: 18px;
+  transform: rotate(0deg); /* مستقیم به سمت راست */
+  margin-left: 10px;       /* فاصله از متن سمت چپ */
   margin-right: 0;
-}
-
-/* موبایل */
-@media (max-width: 767px) {
-  body, .line, .neon-button {
-    font-family: 'Homa', sans-serif !important;
-  }
-
-  .arrow {
-    margin-left: 10px;
-    margin-right: 0;
-    order: 2;
-    transform: rotate(0deg);
-  }
 }
 
 /* دسکتاپ */
 @media (min-width: 768px) {
   .neon-button {
+    flex-direction: row-reverse;
     padding: 16px 32px;
     font-size: 18px;
+    border-radius: 40px;
   }
 
   .arrow {
     font-size: 22px;
+    animation: blink 1.5s infinite; /* فقط چشمک بزنه */
     margin-left: 10px;
     margin-right: 0;
-    order: 2;
+  }
+}
+
+/* موبایل */
+@media (max-width: 767px) {
+  .neon-button {
+    flex-direction: row;
+  }
+
+  .arrow {
+    font-size: 18px;
+    animation: blink 1.5s infinite; /* فقط چشمک بزنه */
+    margin-left: 10px; /* این باعث میشه سمت راست باشه */
+    margin-right: 0;
   }
 }
 
