@@ -94,7 +94,10 @@ body {
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  transform: rotate(0deg); /* مستقیم به سمت راست */
+  transform: rotate(0deg); /* فلش سمت چپ */
+  /* اگر خواستی راست بشه این رو بذار:
+  transform: rotate(180deg);
+  */
 }
 
 @media (min-width: 768px) {
