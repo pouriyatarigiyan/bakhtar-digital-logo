@@ -2,144 +2,150 @@
 @import url('https://fonts.cdnfonts.com/css/homa');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
 }
 
 body {
-  background-color: #004AAD;
-  font-family: 'Homa', sans-serif !important;
-  color: white;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #004AAD;
+  font-family: 'Homa', sans-serif !important;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* کانتینر اصلی */
 .container {
-  text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
-  width: 90%;
-  max-width: 420px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+  width: 90%;
+  max-width: 420px;
 }
 
 /* متن بالای صفحه با فونت Orbitron (انگلیسی) */
 .top-text {
-  font-family: 'Orbitron', sans-serif !important;
-  font-size: 22px;
-  color: #ffffff;
-  text-shadow: 0 0 8px #00f0ff;
-  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 22px;
+  color: #ffffff;
+  text-shadow: 0 0 8px #00f0ff;
+  margin-bottom: 20px;
 }
 
 /* باکس شیشه‌ای */
 .glass-box {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding: 30px 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  animation: floatUp 1.2s ease forwards;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: floatUp 1.2s ease forwards;
+  margin: 0 auto;
 }
 
 /* خطوط متن فارسی */
 .line {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: white;
-  letter-spacing: 1px;
-  font-family: 'Homa', sans-serif !important;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Homa', sans-serif !important;
 }
 
 /* دکمه نئون */
 .neon-button {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 20px;
-  color: #004AAD;
-  background: white;
-  font-weight: bold;
-  font-family: 'Homa', sans-serif !important;
-  letter-spacing: 0.5px;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 0 10px white, 0 0 20px #fff;
-  animation: pulse 2s infinite;
-  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: #004AAD;
+  background: white;
+  font-weight: bold;
+  font-family: 'Homa', sans-serif !important;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 10px white, 0 0 20px #fff;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
 }
 
 /* هاور دکمه */
 .neon-button:hover {
-  box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
-  transform: scale(1.05);
+  box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
+  transform: scale(1.05);
 }
 
 /* فلش */
 .arrow {
-  animation: blink 1s infinite;
-  color: #00e1ff;
-  font-size: 18px;
-  transform: rotate(0deg); /* مستقیم به سمت راست */
+  animation: blink 1s infinite;
+  color: #00e1ff;
+  font-size: 18px;
+  transform: rotate(0deg); /* مستقیم به سمت راست */
 }
 
 /* دسکتاپ */
 @media (min-width: 768px) {
-  .neon-button {
-    flex-direction: row-reverse;
-    padding: 16px 32px;
-    font-size: 18px;
-    border-radius: 40px;
-  }
+  .neon-button {
+    flex-direction: row-reverse;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 40px;
+  }
 
-  .arrow {
-    font-size: 22px;
-    margin-left: 10px;
-    margin-right: 0;
-    animation: blink 1s infinite; /* فقط چشمک بزنه */
-  }
+  .arrow {
+    font-size: 22px;
+    margin-left: 10px;
+    margin-right: 0;
+    animation: blink 1s infinite;
+    transform: rotate(0deg);
+  }
 }
 
 /* موبایل */
 @media (max-width: 767px) {
-  .neon-button {
-    flex-direction: row;
-  }
+  body {
+    font-family: 'Homa', sans-serif !important;
+  }
 
-  .arrow {
-    font-size: 18px;
-    margin-left: 0;
-    margin-right: 10px;
-    animation: blink 1s infinite; /* فقط چشمک بزنه */
-  }
+  .neon-button {
+    flex-direction: row-reverse;
+  }
+
+  .arrow {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 0;
+    animation: blink 1s infinite;
+    transform: rotate(0deg);
+  }
 }
 
 /* انیمیشن‌ها */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
-  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
-  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
+  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
