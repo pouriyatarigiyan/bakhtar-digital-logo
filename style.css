@@ -5,6 +5,8 @@
   font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -24,16 +26,20 @@ body {
 
 .container {
   text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
   width: 90%;
   max-width: 420px;
 }
 
+/* فونت انگلیسی Bakhtar Digital و چپ‌چین کردن متن انگلیسی */
 .top-text {
   font-family: 'Orbitron', sans-serif;
   font-size: 22px;
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
+  direction: ltr;
+  text-align: left;
 }
 
 .glass-box {
@@ -43,6 +49,7 @@ body {
   -webkit-backdrop-filter: blur(15px);
   padding: 30px 20px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: floatUp 1.2s ease forwards;
   margin: 0 auto;
 }
 
@@ -71,6 +78,7 @@ body {
   text-decoration: none;
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   transition: all 0.3s ease-in-out;
+  direction: ltr; /* اضافه برای فونت انگلیسی و فلش سمت راست */
 }
 
 .neon-button:hover {
@@ -78,29 +86,17 @@ body {
   transform: scale(1.05);
 }
 
+/* فلش سمت راست */
 .arrow {
+  animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  /* فلش سمت راست */
+  margin-left: 0;
+  margin-right: 10px;
   transform: rotate(0deg);
-  margin-left: 10px;
-  margin-right: 0;
+  direction: ltr;
 }
 
-/* موبایل */
-@media (max-width: 767px) {
-  .neon-button {
-    flex-direction: row;
-  }
-
-  .arrow {
-    font-size: 18px;
-    margin-left: 10px;
-    margin-right: 0;
-  }
-}
-
-/* دسکتاپ */
 @media (min-width: 768px) {
   .neon-button {
     flex-direction: row;
@@ -111,7 +107,42 @@ body {
 
   .arrow {
     font-size: 22px;
-    margin-left: 10px;
-    margin-right: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    animation: blink 1s infinite;
   }
+}
+
+@media (max-width: 767px) {
+  .neon-button {
+    flex-direction: row;
+  }
+
+  .arrow {
+    font-size: 18px;
+    margin-left: 0;
+    margin-right: 10px;
+    animation: blink 1s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
+  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
