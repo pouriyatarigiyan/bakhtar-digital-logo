@@ -37,8 +37,6 @@ body {
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
-  direction: ltr;
-  text-align: left;
 }
 
 .glass-box {
@@ -76,7 +74,9 @@ body {
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 0 10px white, 0 0 20px #fff;
+  animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
+  flex-direction: row; /* برای فلش سمت راست */
 }
 
 .neon-button:hover {
@@ -88,14 +88,13 @@ body {
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  margin-left: 0;
-  margin-right: 10px;
   transform: rotate(0deg);
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 @media (min-width: 768px) {
   .neon-button {
-    flex-direction: row;
     padding: 16px 32px;
     font-size: 18px;
     border-radius: 40px;
@@ -103,40 +102,59 @@ body {
 
   .arrow {
     font-size: 22px;
-    margin-left: 0;
-    margin-right: 10px;
   }
 }
 
 @media (max-width: 767px) {
   .neon-button {
-    flex-direction: row;
+    /* flex-direction: row; همین باشه */
   }
 
   .arrow {
     font-size: 18px;
-    margin-left: 0;
-    margin-right: 10px;
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes floatUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
-  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
-  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  0% {
+    box-shadow: 0 0 10px white, 0 0 20px #fff;
+  }
+  50% {
+    box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
+  }
+  100% {
+    box-shadow: 0 0 10px white, 0 0 20px #fff;
+  }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
