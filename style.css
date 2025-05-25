@@ -16,8 +16,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* کانتینر اصلی */
@@ -28,7 +26,7 @@ body {
   max-width: 420px;
 }
 
-/* متن بالای صفحه با فونت Orbitron (انگلیسی) */
+/* متن انگلیسی بالا */
 .top-text {
   font-family: 'Orbitron', sans-serif;
   font-size: 22px;
@@ -49,7 +47,7 @@ body {
   margin: 0 auto;
 }
 
-/* خطوط متن فارسی */
+/* متن فارسی */
 .line {
   font-size: 16px;
   font-weight: bold;
@@ -77,6 +75,7 @@ body {
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
+  flex-direction: row-reverse;
 }
 
 /* هاور دکمه */
@@ -89,42 +88,39 @@ body {
 .arrow {
   animation: blink 1s infinite;
   color: #00e1ff;
-  font-size: 18px;
+  font-size: 20px;
   transform: rotate(0deg); /* مستقیم به راست */
-  order: 1;
-  margin-right: 0;
+  order: 2;
   margin-left: 10px;
+  margin-right: 0;
+}
+
+/* موبایل */
+@media (max-width: 767px) {
+  body, .line, .neon-button {
+    font-family: 'Homa', sans-serif !important;
+  }
+
+  .arrow {
+    margin-left: 10px;
+    margin-right: 0;
+    order: 2;
+    transform: rotate(0deg);
+  }
 }
 
 /* دسکتاپ */
 @media (min-width: 768px) {
   .neon-button {
-    flex-direction: row-reverse;
     padding: 16px 32px;
     font-size: 18px;
-    border-radius: 40px;
   }
 
   .arrow {
     font-size: 22px;
-  }
-}
-
-/* موبایل */
-@media (max-width: 767px) {
-  .neon-button {
-    flex-direction: row-reverse;
-  }
-
-  .arrow {
-    font-size: 18px;
-    order: 1;
-    margin-right: 0;
     margin-left: 10px;
-  }
-
-  body, .line, .neon-button {
-    font-family: 'Homa', sans-serif !important;
+    margin-right: 0;
+    order: 2;
   }
 }
 
@@ -149,5 +145,3 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
-
-
