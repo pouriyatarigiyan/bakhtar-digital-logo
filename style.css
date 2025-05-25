@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/pamu');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/homa');
 
 * {
@@ -24,9 +24,10 @@ body {
 }
 
 .top-text {
-  font-family: 'Pamu', sans-serif;
-  font-size: 14px;
-  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  color: #ffffff;
+  text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
 }
 
@@ -47,33 +48,55 @@ body {
   margin-bottom: 12px;
   color: white;
   letter-spacing: 1px;
-  animation: fadeIn 1s ease forwards;
+  font-family: 'Homa', sans-serif;
 }
 
 .neon-button {
   margin-top: 20px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row-reverse;
   padding: 12px 20px;
   color: #004AAD;
   background: white;
   font-weight: bold;
   font-family: 'Homa', sans-serif;
+  letter-spacing: 0.5px;
   border-radius: 50px;
   text-decoration: none;
-  position: relative;
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
+  transform: scale(1.05);
 }
 
 .arrow {
-  margin-right: 10px;
-  display: inline-block;
-  animation: blink 1s infinite, bounce 1.5s infinite;
+  animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
   transform: rotate(45deg);
 }
 
+/* ریسپانسیو */
+@media (min-width: 768px) {
+  .neon-button {
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 40px;
+  }
+
+  .arrow {
+    font-size: 22px;
+  }
+}
+
+/* انیمیشن‌ها */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -93,11 +116,6 @@ body {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0) rotate(45deg); }
-  50% { transform: translateY(-5px) rotate(45deg); }
 }
 
 
