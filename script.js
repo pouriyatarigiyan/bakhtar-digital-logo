@@ -1,6 +1,4 @@
-// اجرای انیمیشن موشن هنگام بارگذاری
 window.addEventListener("load", () => {
-  document.querySelectorAll(".section").forEach(section => {
-    section.classList.add("visible");
-  });
+  // Future animations or interactions can go here
+  console.log("Site loaded with animation.");
 });
