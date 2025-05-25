@@ -83,7 +83,7 @@ body {
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
-  direction: ltr; /* فلش همیشه سمت راست */
+  direction: rtl;
 }
 
 .neon-button:hover {
@@ -95,6 +95,34 @@ body {
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .neon-button {
+    flex-direction: row;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 40px;
+  }
+
+  .arrow {
+    font-size: 22px;
+    margin-right: 10px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .neon-button {
+    flex-direction: row;
+  }
+
+  .arrow {
+    font-size: 18px;
+    margin-right: 10px;
+    margin-left: 0;
+  }
 }
 
 @keyframes fadeIn {
