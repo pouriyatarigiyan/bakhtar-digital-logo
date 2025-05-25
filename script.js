@@ -1,3 +1,1 @@
-document.getElementById('clickMe').addEventListener('click', function() {
-  alert('دکمه کلیک شد! این یک نمونه ساده است.');
-});
+background-image: url('images/bg.jpg');
