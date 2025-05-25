@@ -88,6 +88,8 @@ body {
   color: #00e1ff;
   font-size: 18px;
   transform: rotate(0deg); /* مستقیم به سمت راست */
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 /* دسکتاپ */
@@ -104,7 +106,7 @@ body {
     margin-left: 10px;
     margin-right: 0;
     animation: blink 1s infinite; /* فقط چشمک بزنه */
-    transform: rotate(0deg); /* مستقیم به سمت راست */
+    transform: rotate(0deg);
   }
 }
 
@@ -112,7 +114,7 @@ body {
 @media (max-width: 767px) {
   .line {
     font-size: 14px;
-    font-family: 'Homa', sans-serif !important;
+    font-family: 'Homa', sans-serif !important; /* فونت فارسی اجباری */
   }
 
   .neon-button {
@@ -121,10 +123,10 @@ body {
 
   .arrow {
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 10px;   /* فلش سمت راست */
     margin-right: 0;
-    animation: blink 1s infinite;
-    transform: rotate(0deg); /* فلش مستقیم به سمت راست */
+    animation: blink 1s infinite; /* فقط چشمک بزنه */
+    transform: rotate(0deg);      /* نوک فلش مستقیم سمت راست */
   }
 }
 
