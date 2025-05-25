@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 @font-face {
   font-family: 'Homa';
-  src: url('Far_Homa.ttf') format('truetype');
+  src: url('fonts/Far_Homa.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -60,9 +59,6 @@ body {
   color: white;
   letter-spacing: 1px;
   font-family: 'Homa', sans-serif !important;
-  white-space: nowrap; /* جلوگیری از شکست خط */
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* دکمه نئون */
@@ -97,7 +93,6 @@ body {
   color: #00e1ff;
   font-size: 18px;
   transform: rotate(0deg); /* مستقیم به سمت راست */
-  margin-left: 10px;
 }
 
 /* دسکتاپ */
@@ -120,7 +115,7 @@ body {
 /* موبایل */
 @media (max-width: 767px) {
   .line {
-    font-size: 14px; /* فونت کوچکتر */
+    font-size: 14px;
   }
 
   .neon-button {
@@ -129,8 +124,8 @@ body {
 
   .arrow {
     font-size: 18px;
-    margin-left: 10px; /* فلش سمت راست */
-    margin-right: 0;
+    margin-left: 0;
+    margin-right: 10px;
     animation: blink 1s infinite; /* فقط چشمک بزنه */
   }
 }
