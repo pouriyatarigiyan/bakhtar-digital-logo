@@ -1,11 +1,5 @@
-@font-face {
-  font-family: 'Homa';
-  src: url('./fonts/Homa.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/homa');
 
 * {
   margin: 0;
@@ -16,12 +10,14 @@
 
 body {
   background-color: #004AAD;
-  font-family: 'Homa', sans-serif !important;
+  font-family: 'Homa', sans-serif;
   color: white;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* کانتینر اصلی */
@@ -34,7 +30,7 @@ body {
 
 /* متن بالای صفحه با فونت Orbitron (انگلیسی) */
 .top-text {
-  font-family: 'Orbitron', sans-serif !important;
+  font-family: 'Orbitron', sans-serif;
   font-size: 22px;
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
@@ -60,7 +56,7 @@ body {
   margin-bottom: 12px;
   color: white;
   letter-spacing: 1px;
-  font-family: 'Homa', sans-serif !important;
+  font-family: 'Homa', sans-serif;
 }
 
 /* دکمه نئون */
@@ -74,7 +70,7 @@ body {
   color: #004AAD;
   background: white;
   font-weight: bold;
-  font-family: 'Homa', sans-serif !important;
+  font-family: 'Homa', sans-serif;
   letter-spacing: 0.5px;
   border-radius: 50px;
   text-decoration: none;
@@ -95,6 +91,9 @@ body {
   color: #00e1ff;
   font-size: 18px;
   transform: rotate(0deg); /* مستقیم به راست */
+  order: 1;
+  margin-right: 0;
+  margin-left: 10px;
 }
 
 /* دسکتاپ */
@@ -108,25 +107,24 @@ body {
 
   .arrow {
     font-size: 22px;
-    margin-left: 10px;
-    margin-right: 0;
-    animation: blink 1s infinite;
-    transform: rotate(0deg); /* مستقیم به راست */
   }
 }
 
 /* موبایل */
 @media (max-width: 767px) {
   .neon-button {
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 
   .arrow {
     font-size: 18px;
-    margin-left: 10px;
+    order: 1;
     margin-right: 0;
-    animation: blink 1s infinite;
-    transform: rotate(0deg); /* مستقیم به راست */
+    margin-left: 10px;
+  }
+
+  body, .line, .neon-button {
+    font-family: 'Homa', sans-serif !important;
   }
 }
 
@@ -151,3 +149,4 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
+
