@@ -1,4 +1,3 @@
-/* فونت هما */
 @font-face {
   font-family: 'Homa';
   src: url('fonts/Far_Homa.ttf') format('truetype');
@@ -6,11 +5,10 @@
   font-style: normal;
 }
 
-/* فونت Orbitron (انگلیسی) */
 @font-face {
   font-family: 'Orbitron';
-  src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
+  src: url('fonts/Orbitron-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -38,15 +36,14 @@ body {
   max-width: 420px;
 }
 
-/* متن انگلیسی باختر دیجیتال */
 .top-text {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif !important;
   font-size: 22px;
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
-  direction: ltr;  /* برای انگلیسی */
   text-align: center;
+  font-weight: 700;
 }
 
 .glass-box {
@@ -69,7 +66,6 @@ body {
   font-family: 'Homa', sans-serif;
 }
 
-/* دکمه */
 .neon-button {
   margin-top: 20px;
   display: flex;
@@ -87,7 +83,6 @@ body {
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
-  direction: rtl;
 }
 
 .neon-button:hover {
@@ -95,14 +90,11 @@ body {
   transform: scale(1.05);
 }
 
-/* فلش به سمت راست */
 .arrow {
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
   transform: rotate(0deg); /* مستقیم به سمت راست */
-  margin-left: 10px; /* فاصله از متن سمت چپ */
-  margin-right: 0;
 }
 
 @media (min-width: 768px) {
