@@ -5,8 +5,6 @@
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +24,6 @@ body {
 
 .container {
   text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
   width: 90%;
   max-width: 420px;
 }
@@ -46,7 +43,6 @@ body {
   -webkit-backdrop-filter: blur(15px);
   padding: 30px 20px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  animation: floatUp 1.2s ease forwards;
   margin: 0 auto;
 }
 
@@ -74,7 +70,6 @@ body {
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 0 10px white, 0 0 20px #fff;
-  animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
 }
 
@@ -84,12 +79,28 @@ body {
 }
 
 .arrow {
-  animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  transform: rotate(0deg); /* مستقیم به سمت راست */
+  /* فلش سمت راست */
+  transform: rotate(0deg);
+  margin-left: 10px;
+  margin-right: 0;
 }
 
+/* موبایل */
+@media (max-width: 767px) {
+  .neon-button {
+    flex-direction: row;
+  }
+
+  .arrow {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+}
+
+/* دسکتاپ */
 @media (min-width: 768px) {
   .neon-button {
     flex-direction: row;
@@ -102,40 +113,5 @@ body {
     font-size: 22px;
     margin-left: 10px;
     margin-right: 0;
-    animation: blink 1s infinite;
   }
-}
-
-@media (max-width: 767px) {
-  .neon-button {
-    flex-direction: row;
-  }
-
-  .arrow {
-    font-size: 18px;
-    margin-left: 10px;
-    margin-right: 0;
-    animation: blink 1s infinite;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
-  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
-  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
 }
