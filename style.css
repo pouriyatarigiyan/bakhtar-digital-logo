@@ -1,13 +1,8 @@
+/* فونت‌ها */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/homa');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
-}
-
+/* کل بدنه */
 body {
   background-color: #004AAD;
   font-family: 'Homa', sans-serif;
@@ -16,41 +11,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  direction: rtl;
 }
 
-.container {
-  text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
+/* فونت انگلیسی - در همه حالت‌ها */
 .top-text {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif !important;
   font-size: 22px;
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
 }
 
-.glass-box {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  padding: 30px 20px;
-  max-width: 400px;
-  margin: 0 auto;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  animation: floatUp 1.2s ease forwards;
-}
-
+/* متن فارسی */
 .line {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 12px;
   color: white;
   letter-spacing: 1px;
-  font-family: 'Homa', sans-serif;
+  font-family: 'Homa', sans-serif !important;
 }
 
+/* دکمه نئون */
 .neon-button {
   margin-top: 20px;
   display: flex;
@@ -62,7 +45,7 @@ body {
   color: #004AAD;
   background: white;
   font-weight: bold;
-  font-family: 'Homa', sans-serif;
+  font-family: 'Homa', sans-serif !important;
   letter-spacing: 0.5px;
   border-radius: 50px;
   text-decoration: none;
@@ -76,37 +59,38 @@ body {
   transform: scale(1.05);
 }
 
-.arrow {
-  animation: blink 1s infinite;
-  color: #00e1ff;
-  font-size: 18px;
-  transform: rotate(45deg);
-}
-
-/* ریسپانسیو */
+/* فلش */
+/* حالت دسکتاپ */
 @media (min-width: 768px) {
-  .neon-button {
-    padding: 16px 32px;
-    font-size: 18px;
-    border-radius: 40px;
-  }
-
   .arrow {
     font-size: 22px;
+    animation: blink 1s infinite;
+    color: #00e1ff;
+    transform: rotate(0deg); /* مستقیم به سمت راست */
+    margin-left: 10px; /* فاصله از متن */
+    margin-right: 0;
+  }
+  .neon-button {
+    flex-direction: row-reverse;
   }
 }
 
-/* انیمیشن‌ها */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* حالت موبایل */
+@media (max-width: 767px) {
+  .arrow {
+    font-size: 18px;
+    animation: blink 1s infinite;
+    color: #00e1ff;
+    transform: rotate(0deg); /* مستقیم به سمت راست */
+    margin-left: 0;
+    margin-right: 10px; /* فلش سمت چپ متن */
+  }
+  .neon-button {
+    flex-direction: row;
+  }
 }
 
-@keyframes floatUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
+/* انیمیشن ها */
 @keyframes pulse {
   0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
   50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
@@ -117,5 +101,3 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
-
-
