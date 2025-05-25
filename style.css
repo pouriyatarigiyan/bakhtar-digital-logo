@@ -1,9 +1,4 @@
-@font-face {
-  font-family: 'Homa';
-  src: url('fonts/Far_Homa.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.cdnfonts.com/css/homa');
 
 * {
   margin: 0;
@@ -109,6 +104,7 @@ body {
     margin-left: 10px;
     margin-right: 0;
     animation: blink 1s infinite; /* فقط چشمک بزنه */
+    transform: rotate(0deg); /* مستقیم به سمت راست */
   }
 }
 
@@ -116,6 +112,7 @@ body {
 @media (max-width: 767px) {
   .line {
     font-size: 14px;
+    font-family: 'Homa', sans-serif !important;
   }
 
   .neon-button {
@@ -124,9 +121,10 @@ body {
 
   .arrow {
     font-size: 18px;
-    margin-left: 0;
-    margin-right: 10px;
-    animation: blink 1s infinite; /* فقط چشمک بزنه */
+    margin-left: 10px;
+    margin-right: 0;
+    animation: blink 1s infinite;
+    transform: rotate(0deg); /* فلش مستقیم به سمت راست */
   }
 }
 
