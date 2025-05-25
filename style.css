@@ -1,14 +1,49 @@
+@font-face {
+  font-family: 'Homa';
+  src: url('./fonts/Homa.woff2') format('woff2'),
+       url('./fonts/Homa.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./fonts/Orbitron.woff2') format('woff2'),
+       url('./fonts/Orbitron.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background: radial-gradient(circle at center, #000000, #111111);
+  height: 100vh;
+  margin: 0;
+  font-family: 'Homa', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
 .container {
   width: 90%;
   max-width: 420px;
-  animation: fadeIn 1.5s ease-in-out;
-  margin: 0 auto;
-  text-align: center;  /* وسط چین کامل محتوا */
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;  /* فاصله کمتر بین المان‌ها */
+  gap: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.top-text {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  text-shadow: 0 0 8px #00f0ff;
 }
 
 .glass-box {
@@ -18,13 +53,11 @@
   -webkit-backdrop-filter: blur(15px);
   padding: 30px 20px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  animation: floatUp 1.2s ease forwards;
-  margin: 0 auto;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;  /* فاصله کمتر بین خطوط داخل باکس */
-  max-width: 100%;
+  gap: 12px;
+  animation: floatUp 1.2s ease forwards;
 }
 
 .line {
@@ -33,8 +66,8 @@
   color: white;
   letter-spacing: 1px;
   font-family: 'Homa', sans-serif;
-  margin-bottom: 0;
-  line-height: 1.3;  /* ارتفاع خط کمتر و مرتب */
+  line-height: 1.5;
+  margin: 0;
 }
 
 .neon-button {
@@ -54,25 +87,47 @@
   box-shadow: 0 0 10px white, 0 0 20px #fff;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
-  vertical-align: middle;
-}
-
-.top-text {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: #ffffff;
-  text-shadow: 0 0 8px #00f0ff;
-  margin-bottom: 20px;
-  text-align: center;
 }
 
 .arrow {
   animation: blink 1s infinite;
   color: #00e1ff;
   font-size: 18px;
-  transform: rotate(0deg);
+  transform: rotate(180deg); /* فلش از چپ به راست */
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px white, 0 0 20px #fff;
+  }
+  50% {
+    box-shadow: 0 0 20px white, 0 0 30px #00f0ff;
+  }
+  100% {
+    box-shadow: 0 0 10px white, 0 0 20px #fff;
+  }
 }
