@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 @font-face {
   font-family: 'Homa';
-  src: url('fonts/Far_Homa.ttf') format('truetype');
+  src: url('Far_Homa.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,6 +23,7 @@ body {
   align-items: center;
 }
 
+/* کانتینر اصلی */
 .container {
   text-align: center;
   animation: fadeIn 1.5s ease-in-out;
@@ -29,16 +31,16 @@ body {
   max-width: 420px;
 }
 
+/* متن بالای صفحه با فونت Orbitron (انگلیسی) */
 .top-text {
   font-family: 'Orbitron', sans-serif !important;
   font-size: 22px;
   color: #ffffff;
   text-shadow: 0 0 8px #00f0ff;
   margin-bottom: 20px;
-  font-weight: bold;
-  letter-spacing: 1.2px;
 }
 
+/* باکس شیشه‌ای */
 .glass-box {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
@@ -50,6 +52,7 @@ body {
   margin: 0 auto;
 }
 
+/* خطوط متن فارسی */
 .line {
   font-size: 16px;
   font-weight: bold;
@@ -57,8 +60,12 @@ body {
   color: white;
   letter-spacing: 1px;
   font-family: 'Homa', sans-serif !important;
+  white-space: nowrap; /* جلوگیری از شکست خط */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* دکمه نئون */
 .neon-button {
   margin-top: 20px;
   display: flex;
@@ -71,4 +78,81 @@ body {
   font-weight: bold;
   font-family: 'Homa', sans-serif !important;
   letter-spacing: 0.5px;
-  border-radius
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 10px white, 0 0 20px #fff;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+/* هاور دکمه */
+.neon-button:hover {
+  box-shadow: 0 0 20px white, 0 0 40px #00e1ff;
+  transform: scale(1.05);
+}
+
+/* فلش */
+.arrow {
+  animation: blink 1s infinite;
+  color: #00e1ff;
+  font-size: 18px;
+  transform: rotate(0deg); /* مستقیم به سمت راست */
+  margin-left: 10px;
+}
+
+/* دسکتاپ */
+@media (min-width: 768px) {
+  .neon-button {
+    flex-direction: row-reverse;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 40px;
+  }
+
+  .arrow {
+    font-size: 22px;
+    margin-left: 10px;
+    margin-right: 0;
+    animation: blink 1s infinite; /* فقط چشمک بزنه */
+  }
+}
+
+/* موبایل */
+@media (max-width: 767px) {
+  .line {
+    font-size: 14px; /* فونت کوچکتر */
+  }
+
+  .neon-button {
+    flex-direction: row;
+  }
+
+  .arrow {
+    font-size: 18px;
+    margin-left: 10px; /* فلش سمت راست */
+    margin-right: 0;
+    animation: blink 1s infinite; /* فقط چشمک بزنه */
+  }
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+  50% { box-shadow: 0 0 20px white, 0 0 40px #00e1ff; }
+  100% { box-shadow: 0 0 10px white, 0 0 20px #fff; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
